@@ -1,16 +1,20 @@
 package com.devsuperior.dsmovie.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb-movie")
-public class Movie {
-	
+@Table(name = "tb_movie")
+
+public class Movie {	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String tilte;
+	private String title;
 	private Double score;
 	private Integer count;
 	private String image;
@@ -18,9 +22,9 @@ public class Movie {
 	public Movie() {
 	}
 
-	public Movie(Long id, String tilte, Double score, Integer count, String image) {
+	public Movie(Long id, String title, Double score, Integer count, String image) {
 		this.id = id;
-		this.tilte = tilte;
+		this.title = title;
 		this.score = score;
 		this.count = count;
 		this.image = image;
@@ -35,11 +39,11 @@ public class Movie {
 	}
 
 	public String getTilte() {
-		return tilte;
+		return title;
 	}
 
-	public void setTilte(String tilte) {
-		this.tilte = tilte;
+	public void setTilte(String title) {
+		this.title = title;
 	}
 
 	public Double getScore() {
